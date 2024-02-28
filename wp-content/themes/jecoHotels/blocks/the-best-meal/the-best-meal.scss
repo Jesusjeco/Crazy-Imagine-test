@@ -1,0 +1,46 @@
+.the-best-meal {
+	.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 100px;
+
+		.first-image img,
+		.second-image img {
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+			width: 100%;
+		}
+		.left {
+			.first-title {
+				font-family: var(--font-displayClean);
+				font-size: 8rem;
+				color: var(--primary-color);
+				text-transform: capitalize;
+			}
+			.second-title {
+				font-family: var(--font-oswald);
+				font-size: 4rem;
+				text-transform: uppercase;
+			}
+			.first-image {
+				margin-top: 35px;
+			}
+		}
+
+		.right {
+			.content {
+				margin-top: 35px;
+				margin-bottom: 35px;
+			}
+			.link {
+				margin-top: 35px;
+				a {
+					font-size: 1.25rem;
+					text-transform: uppercase;
+					font-family: var(--font-oswald);
+					font-weight: var(--font-bold-default);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+button,
+.button {
+	font-family: var(--font-oswald);
+	font-weight: var(--font-bold-default);
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	display: inline-flex;
+	justify-content: center;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+ 
+	padding: 16px 24px;
+	@include for-bp("desktop-switch") {
+		min-width: 150px;
+	}
+}
+.button-primary {
+	background: var(--primary-color);
+	color: var(--color-white);
+}
+
+.button-form{
+	background: var(--color-scarlet);
+	color: var(--color-white);
+}
