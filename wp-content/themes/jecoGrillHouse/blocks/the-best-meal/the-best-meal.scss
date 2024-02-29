@@ -1,8 +1,12 @@
+@use "../../src/scss/breakpoints";
 .the-best-meal {
 	.wrapper {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 100px;
+		gap: 35px;
+		@include breakpoints.for-bp("tablet-lg") {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 100px;
+		}
 
 		.first-image img,
 		.second-image img {
@@ -13,14 +17,38 @@
 		.left {
 			.first-title {
 				font-family: var(--font-displayClean);
-				font-size: 8rem;
+				font-size: 5rem;
 				color: var(--primary-color);
 				text-transform: capitalize;
+				@include breakpoints.for-bp("mobile-md") {
+					font-size: 6rem;
+				}
+				@include breakpoints.for-bp("tablet-switch") {
+					font-size: 7rem;
+				}
+				@include breakpoints.for-bp("tablet-lg") {
+					font-size: 8rem;
+				}
 			}
 			.second-title {
 				font-family: var(--font-oswald);
-				font-size: 4rem;
+				font-size: 2rem;
 				text-transform: uppercase;
+				@include breakpoints.for-bp("mobile-md") {
+					font-size: 3rem;
+				}
+				@include breakpoints.for-bp("tablet-switch") {
+					font-size: 4rem;
+				}
+				@include breakpoints.for-bp("tablet-lg") {
+					font-size: 3rem;
+				}
+				@include breakpoints.for-bp("desktop-switch") {
+					font-size: 4rem;
+				}
+				@include breakpoints.for-bp("desktop-lg") {
+					font-size: 5rem;
+				}
 			}
 			.first-image {
 				margin-top: 35px;
@@ -39,6 +67,10 @@
 					text-transform: uppercase;
 					font-family: var(--font-oswald);
 					font-weight: var(--font-bold-default);
+
+					@include breakpoints.for-bp("tablet-lg") {
+						font-size: 1.625rem;
+					}
 				}
 			}
 		}

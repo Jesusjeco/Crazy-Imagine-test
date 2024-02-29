@@ -1,22 +1,36 @@
+@use "../../src/scss/breakpoints";
 .short-menu {
 	.wrapper {
 		.items {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			column-gap: 30px;
-			row-gap: 80px;
+			gap: 35px;
+
+			@include breakpoints.for-bp("desktop-lg") {
+				grid-template-columns: 1fr 1fr;
+				column-gap: 30px;
+				row-gap: 80px;
+			}
 			.item {
 				display: grid;
-				grid-template-columns: 1fr 1fr;
-				column-gap: 25px;
+				@include breakpoints.for-bp("tablet-lg") {
+					grid-template-columns: 1fr 1fr;
+					column-gap: 25px;
+				}
 
 				.left {
 					img {
+
 						border-radius: 5px;
-						aspect-ratio: 1 / 1;
+						aspect-ratio: 4 / 3;
 						object-fit: cover;
 						object-position: center center;
 						height: 100%;
+						width: 100%;
+
+						
+						@include breakpoints.for-bp("mobile-md"){
+							width: 400px;
+						}
 					}
 				}
 

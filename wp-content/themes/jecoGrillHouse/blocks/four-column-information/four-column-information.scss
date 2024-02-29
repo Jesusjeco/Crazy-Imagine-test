@@ -1,9 +1,18 @@
+@use "../../src/scss/breakpoints";
 .four-column-information {
 	background-color: var(--primary-color);
 	color: var(--color-white);
 	.wrapper {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		gap: 25px;
+		@include breakpoints.for-bp("tablet-switch") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoints.for-bp("tablet-lg") {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+		}
 
 		.column {
 			text-align: center;
@@ -11,10 +20,21 @@
 				font-family: var(--font-oswald);
 				font-size: 1.5rem;
 				text-transform: uppercase;
+
+				@include breakpoints.for-bp("tablet-lg") {
+					font-size: 1.688rem;
+				}
 			}
 
 			.content {
-				margin-top: 20px;
+				font-size: 1.25rem;
+				margin-top: 5px;
+				@include breakpoints.for-bp("tablet-switch") {
+					margin-top: 10px;
+				}
+				@include breakpoints.for-bp("tablet-lg") {
+					margin-top: 20px;
+				}
 			}
 		}
 	}
