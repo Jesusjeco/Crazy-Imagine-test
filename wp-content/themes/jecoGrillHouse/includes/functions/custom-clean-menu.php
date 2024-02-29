@@ -8,15 +8,7 @@ function clean_custom_menus()
         $menu_items = wp_get_nav_menu_items($menu->term_id);
 
         $menu_list = '<nav>' . "\n";
-        $menu_list .= <<<ITEM
-            <input type="checkbox" id="show-menu-input-checkbox" role="button">
-            <label for="show-menu-input-checkbox" id="main-menu-toggler" class="flex-container flex-vcenter flex-hcenter">
-                <div id="main-menu-toggler-icon" class="flex-grow"></div>
-            </label>
-        ITEM;
-        $menu_list .= <<<ITEM
-            <ul class="mainMenu accordion" id="mainMenu">
-        ITEM;
+        $menu_list .= "\t\t\t\t" . '<ul>' . "\n";
 
         $cont = 0;
 
@@ -63,10 +55,8 @@ function clean_custom_menus()
         }
 
 
-        $menu_list .= <<<ITEM
-            </ul>
-        </nav>
-        ITEM;
+        $menu_list .= "\t\t\t\t" . '</ul>' . "\n";
+        $menu_list .= "\t\t\t" . '</nav>' . "\n";
     } else {
         // $menu_list = '<!-- no list defined -->';
     }

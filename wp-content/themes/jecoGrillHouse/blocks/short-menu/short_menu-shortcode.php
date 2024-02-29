@@ -1,17 +1,18 @@
-<link rel="stylesheet" href="<?= BLOCKS_STYLES_PATH ?>short-menu/short-menu.css">
+<link rel="stylesheet" href="<?= BLOCKS_STYLES_PATH ?>short-menu/short-menu-shortcode.css">
 
 <?php
-$block_data = get_field('block_data');
-$link = $block_data['button'];
-
 $short_menu_query_data = [
-    "post_types" => "food",
-    "posts_per_page" => $block_data['posts_per_page'],
-    "post_categories" => $block_data['categories'],
+    "post_type" => "food",
+    "posts_per_page" => ($args['posts_per_page'] ?? 4),
+    "post_categories" => ($args['categories'] ?? null),
+    'paged'          => get_query_var('paged') ? get_query_var('paged') : 1,
 ];
-$short_menu_query = get_query($short_menu_query_data);
+$short_menu_query = new WP_Query($short_menu_query_data);
+
+$total_pages  = $short_menu_query->max_num_pages;
+$current_page = max(1, get_query_var('paged'));
 ?>
-<div class="short-menu">
+<div class="short_menu_shortcode">
     <div class="wrapper">
         <?php
         if ($short_menu_query->have_posts()) : ?>
@@ -45,22 +46,23 @@ $short_menu_query = get_query($short_menu_query_data);
                     </div>
                 <?php
                 endwhile; ?>
+                <nav class="pagination">
+                    <?php
+                    echo paginate_links(
+                        array(
+                            'base'    => get_pagenum_link(1) . '%_%',
+                            'format'  => '/page/%#%', // Change to match your URL structure if needed.
+                            'current' => $current_page,
+                            'total'   => $total_pages,
+                            'prev_text' => '< Previous',
+                            'next_text' => 'Next >'
+                        )
+                    );
+                    ?>
+                </nav>
             </div>
         <?php
         endif;
         ?>
-
-        <?php
-
-        if ($link) :
-            $link_url = $link['url'];
-            $link_title = $link['title'];
-            $link_target = $link['target'] ? $link['target'] : '_self';
-        ?>
-            <div class="button-wrapper">
-                <a class="button button-primary" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-
-            </div>
-        <?php endif; ?>
     </div>
 </div>
