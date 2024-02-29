@@ -28,5 +28,6 @@ function get_query($args)
 
     $wp_custom_query = new WP_Query($query_args);
 
+
     return $wp_custom_query;
 }
