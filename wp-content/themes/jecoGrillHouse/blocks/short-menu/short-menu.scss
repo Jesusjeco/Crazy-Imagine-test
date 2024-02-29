@@ -1,0 +1,60 @@
+@use "../../src/scss/breakpoints";
+.short-menu {
+	.wrapper {
+		.items {
+			display: grid;
+			gap: 35px;
+
+			@include breakpoints.for-bp("desktop-lg") {
+				grid-template-columns: 1fr 1fr;
+				column-gap: 30px;
+				row-gap: 80px;
+			}
+			.item {
+				display: grid;
+				@include breakpoints.for-bp("tablet-lg") {
+					grid-template-columns: 1fr 1fr;
+					column-gap: 25px;
+				}
+
+				.left {
+					img {
+						border-radius: 5px;
+						aspect-ratio: 4 / 3;
+						object-fit: cover;
+						object-position: center center;
+						height: 100%;
+						width: 100%;
+
+						@include breakpoints.for-bp("mobile-md") {
+							width: 400px;
+						}
+					}
+				}
+
+				.right {
+					.title {
+						font-family: var(--font-oswald);
+						color: var(--primary-color);
+						text-transform: uppercase;
+						font-size: 2.5rem;
+					}
+					.excerpt {
+						font-size: 1.313rem;
+					}
+					.price {
+						font-family: var(--font-displayClean);
+						color: var(--primary-color);
+						font-size: 10rem;
+						line-height: 75%;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+		.button-wrapper {
+			margin-top: 70px;
+			text-align: center;
+		}
+	}
+}

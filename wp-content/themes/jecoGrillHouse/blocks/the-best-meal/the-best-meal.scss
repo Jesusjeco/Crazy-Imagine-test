@@ -1,0 +1,78 @@
+@use "../../src/scss/breakpoints";
+.the-best-meal {
+	.wrapper {
+		display: grid;
+		gap: 35px;
+		@include breakpoints.for-bp("tablet-lg") {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 100px;
+		}
+
+		.first-image img,
+		.second-image img {
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+			width: 100%;
+		}
+		.left {
+			.first-title {
+				font-family: var(--font-displayClean);
+				font-size: 5rem;
+				color: var(--primary-color);
+				text-transform: capitalize;
+				@include breakpoints.for-bp("mobile-md") {
+					font-size: 6rem;
+				}
+				@include breakpoints.for-bp("tablet-switch") {
+					font-size: 7rem;
+				}
+				@include breakpoints.for-bp("tablet-lg") {
+					font-size: 8rem;
+				}
+			}
+			.second-title {
+				font-family: var(--font-oswald);
+				font-size: 2rem;
+				text-transform: uppercase;
+				@include breakpoints.for-bp("mobile-md") {
+					font-size: 3rem;
+				}
+				@include breakpoints.for-bp("tablet-switch") {
+					font-size: 4rem;
+				}
+				@include breakpoints.for-bp("tablet-lg") {
+					font-size: 3rem;
+				}
+				@include breakpoints.for-bp("desktop-switch") {
+					font-size: 4rem;
+				}
+				@include breakpoints.for-bp("desktop-lg") {
+					font-size: 5rem;
+				}
+			}
+			.first-image {
+				margin-top: 35px;
+			}
+		}
+
+		.right {
+			.content {
+				margin-top: 35px;
+				margin-bottom: 35px;
+			}
+			.link {
+				margin-top: 35px;
+				a {
+					font-size: 1.25rem;
+					text-transform: uppercase;
+					font-family: var(--font-oswald);
+					font-weight: var(--font-bold-default);
+
+					@include breakpoints.for-bp("tablet-lg") {
+						font-size: 1.625rem;
+					}
+				}
+			}
+		}
+	}
+}

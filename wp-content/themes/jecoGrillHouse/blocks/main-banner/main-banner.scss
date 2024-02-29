@@ -1,0 +1,40 @@
+@use "../../src/scss/breakpoints";
+.main-banner {
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 80dvh;
+
+		h1 {
+			font-family: var(--font-oswald);
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 2.5rem;
+
+			@include breakpoints.for-bp("mobile-md") { 
+				font-size: 3rem;
+			}
+
+			@include breakpoints.for-bp("tablet-switch") {
+				font-size: 4rem;
+			}
+
+			@include breakpoints.for-bp("tablet-lg") {
+				font-size: 5rem;
+			}
+
+			@include breakpoints.for-bp("desktop-lg") {
+				width: 75%;
+				font-size: 6rem;
+			}
+		}
+
+		.button-wrapper {
+			margin-top: 35px;
+		}
+	}
+}

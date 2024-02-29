@@ -1,0 +1,13 @@
+.grill-house-divider {
+	.wrapper {
+		padding-top: 0;
+		padding-bottom: 0;
+		hr {
+			height: 5px;
+			background-color: var(--primary-color);
+			width: 100%;
+			margin: 0 auto;
+			border: none;
+		}
+	}
+}
