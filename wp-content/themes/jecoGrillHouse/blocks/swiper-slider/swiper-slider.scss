@@ -1,0 +1,35 @@
+.swiper-slider {
+	.wrapper {
+		.swiper {
+			.swiper-wrapper {
+				.swiper-slide {
+					.title {
+						font-family: var(--font-oswald);
+						font-size: 2rem;
+					}
+                    .image{
+                        img{
+                            aspect-ratio: 1/1;
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+				}
+			}
+			.arrows {
+                margin-top: 30px;
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				gap: 25px;
+				align-items: center;
+				justify-content: center;
+
+				a.swiper-button-next,
+				a.swiper-button-prev {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}
