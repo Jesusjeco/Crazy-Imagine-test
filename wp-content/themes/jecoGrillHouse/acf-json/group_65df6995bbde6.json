@@ -3,11 +3,11 @@
     "title": "Short menu",
     "fields": [
         {
-            "key": "field_65df6996660c7",
-            "label": "button",
-            "name": "button",
+            "key": "field_65e09969cb094",
+            "label": "Block data",
+            "name": "block_data",
             "aria-label": "",
-            "type": "link",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,7 +16,88 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "sub_fields": [
+                {
+                    "key": "field_65df6996660c7",
+                    "label": "button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_65e09a7391ae5",
+                    "label": "Post per page",
+                    "name": "posts_per_page",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 4,
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_65e09af17a53a",
+                    "label": "Categories",
+                    "name": "categories",
+                    "aria-label": "",
+                    "type": "acfe_taxonomy_terms",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": [
+                        "category"
+                    ],
+                    "allow_terms": "",
+                    "allow_level": "",
+                    "field_type": "checkbox",
+                    "default_value": [],
+                    "return_format": "id",
+                    "layout": "horizontal",
+                    "toggle": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "choices": [],
+                    "ui": 0,
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "search_placeholder": "",
+                    "allow_custom": 0,
+                    "other_choice": 0
+                }
+            ],
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -45,5 +126,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1709140412
+    "modified": 1709218609
 }

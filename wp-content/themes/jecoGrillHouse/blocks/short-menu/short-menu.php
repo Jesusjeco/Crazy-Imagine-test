@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="<?= BLOCKS_STYLES_PATH ?>short-menu/short-menu.css">
 
 <?php
+$block_data = get_field('block_data');
+$link = $block_data['button'];
+
 $short_menu_query_data = [
     "post_types" => "food",
-    "posts_per_page" => 4
+    "posts_per_page" => $block_data['posts_per_page'],
+    "post_categories" => $block_data['categories'],
 ];
-
 $short_menu_query = get_query($short_menu_query_data);
-$link = get_field('button');
 ?>
 <div class="short-menu">
     <div class="wrapper">

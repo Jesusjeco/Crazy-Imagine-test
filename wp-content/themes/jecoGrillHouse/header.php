@@ -19,11 +19,12 @@
     <header>
         <div class="wrapper">
             <div class="logo">
-                <img src="<?= $header_data['logo']['url'] ?>" alt="<?= $header_data['logo']['alt'] ?>">
+                <a href="<?= get_home_url() ?>">
+                    <img src="<?= $header_data['logo']['url'] ?>" alt="<?= $header_data['logo']['alt'] ?>">
+                </a>
             </div>
             <div class="menu">
                 <?php clean_custom_menus(); ?>
             </div>
-
         </div>
     </header>
