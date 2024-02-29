@@ -20,5 +20,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "gulp-concat": "^2.6.1",
+    "jquery": "^3.7.1",
+    "swiper": "^11.0.7"
+  }
 }
